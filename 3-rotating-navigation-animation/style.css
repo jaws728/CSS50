@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  background: #333;
+  overflow-x: hidden;
+}
+body .container {
+  background: #fafafa;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+body .container.show-nav {
+  transform: rotate(-20deg);
+}
+body .container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+body .container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+body .container .button-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+body .container .button-container .circle {
+  width: 200px;
+  height: 200px;
+  background-color: #ff7979;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+body .container .button-container .circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+}
+body .container .button-container .circle button:focus {
+  outline: none;
+}
+body .container .button-container .circle #open {
+  left: 60%;
+}
+body .container .button-container .circle #close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+body .container .content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+body .container .content img {
+  width: 100%;
+  border-radius: 20px;
+}
+body .container .content p {
+  color: #333;
+  line-height: 1.5;
+  margin: 16px 0;
+}
+body .container .content small {
+  color: #555;
+  font-style: italic;
+}
+body .container .content h2 {
+  margin: 1em 0;
+}
+body nav {
+  position: fixed;
+  z-index: 100;
+  bottom: 40px;
+  left: 0;
+}
+body nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+body nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translate(-100%);
+  transition: transform 0.4s ease-in;
+}
+body nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+body nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+body nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+body nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
